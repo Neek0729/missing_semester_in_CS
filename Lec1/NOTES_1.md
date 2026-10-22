@@ -51,7 +51,7 @@ and already solved these problems."*
 
 **7. BASH lines and .sh executable**\
 	runs from top to bottom, line by line like bash input sequentially. \
-	**shebang** is hash bang that started at executable files: `#!/bin/sh`. This line tells shell to use this executable file as input and give it to the program under specific dir. [https://en.wikipedia.org/wiki/Shebang_(Unix)](Shebang) \
+	**shebang** is hash bang that started at executable files: `#!/bin/sh`. This line tells shell to use this executable file as input and give it to the program under specific dir. [Shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) \
 	This means `./mypgm.sh` as the same as `/bin/sh <mypgm.sh`. **shebang** makes this equivalence. \
 	**shebang** can be extended to like: `#!/usr/bin/python`. Thus the lines in executable will be passed as input of python. **(NOT AVAILABLE FOR LANGUAGE NEEDS SEPARATE COMPILING)** \
 	`chmod +x` to modify permission/accessibility
