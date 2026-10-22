@@ -1,7 +1,7 @@
 *INSPIRATION of this lecture (by Jose): "unknown unknowns -- might just not know many smart programmers before you have already faced the frustrations you've met
 and already solved these problems."*
 
-**1. BASH (Bourne-Again Shell) in Linux -- Shell: command line interface. Some basic operations:** \
+**1. BASH (Bourne-Again Shell) in Linux -- Shell: command line interface** \
    `date` returns world-time viewing\
    `echo` returns printing string with space-separated arguments\
    `man` returns manual of argument, on wanted instruction like `man date` (`man bash` included more specifics)
@@ -51,7 +51,7 @@ and already solved these problems."*
 
 **7. BASH lines and .sh executable**\
 	runs from top to bottom, line by line like bash input sequentially. \
-	**shebang** is hash bang that started at executable files: `#!/bin/sh`. This line tells shell to use this executable file as input and give it to the program under specific dir. \
+	**shebang** is hash bang that started at executable files: `#!/bin/sh`. This line tells shell to use this executable file as input and give it to the program under specific dir. [https://en.wikipedia.org/wiki/Shebang_(Unix)] \
 	This means `./mypgm.sh` as the same as `/bin/sh <mypgm.sh`. **shebang** makes this equivalence. \
 	**shebang** can be extended to like: `#!/usr/bin/python`. Thus the lines in executable will be passed as input of python. **(NOT AVAILABLE FOR LANGUAGE NEEDS SEPARATE COMPILING)** \
 	`chmod +x` to modify permission/accessibility
