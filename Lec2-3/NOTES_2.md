@@ -57,3 +57,45 @@ once we disconnected, the pgm on remote server will be lost by shell hangup sign
 if reconnect by `tmux attach`. the pgm continues.
 
 ## Customizing shell:
+
+1. to install programs: \
+`sudo apt install tmux` --> package manager on Debian and Ubuntu is APT. \
+`sudo apt install ripgrep` --> a more versatile version of 'grep'. \
+In case don't know program to install, try [this](https://command-not-found.com) 
+
+2. modify shell behavior: \
+`$PATH` env var contains all the PGMs in your OS. Use variable assignment to include more directory: \
+`export PATH="$PATH:path/to/append"` (This is why most time `touch script.sh` cannot find dir., we need to `touch ./script.sh`.\
+Once we modify $PATH to include current dir., we can correctly use `touch script.sh`)
+
+3. modify shell CONFIG: \
+Suppose we use bash on remote server. `export $PATH` won't be kept if we disconnected. So we need to find bashrc or bash_profile to modify CONFIG. \
+once file found, can add the `export PATH=` statement into that file. Thus whenever a shell process is created, this file is read and enable the change. \
+(Also other variables in CONFIG file can be modified to change shell behavior, but normally don't) \
+Moreover we can add new features like fuzzy finder(fzf): modify in the CONFIG file line and enable in terminal by: `source ./bash_profile`. (waked up by ctrl+r)
+
+4. sys CONFIG, dot files: \
+committed bashrc or cshrc files on GitHub. Convenient to transplant CONFIG on different machine. \
+Routine is to place all CONFIG in one place and later install on current environment. \
+*Symlinks* let OS redirect to other dotfiles rather than CONFIG file itself. So we can put all dotfiles under specific dir. and version control on it. 
+
+5. plugins: \
+Experiencing better: autocomplete, highlighting, coloring prompt, host showing, branches showing, etc. \
+Most plugins could be found on GitHub. Git Clone it to local. \
+Framework that contains many plugins(Oh my Zsh), but be cautious to use. (memory unfriendly)
+
+## AI tools in shell
+
+1. LLM tool(ElectroNode) \
+`llm cmd "find all python files modified in last three days"` a more NLP oriented way to return a complex `find` statement and a prompt to whether execute. \
+Also for more complicated mission(much painful if use unstructured parsing):
+```bash
+INSTRUCTIONS="Extract just the username from each line, one name per line, nothing else."
+cat user.txt | llm "$INSTRUCTIONS" | sort
+```
+
+2. Claude \
+Directly give natural languages command. Automatically translated to shell command.
+
+## Appendix: terminal emulator \
+The GUI that running the shell. (**Alacritty**) like dotfiles, many options to configure, like font size.
